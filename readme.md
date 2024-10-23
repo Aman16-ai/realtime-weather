@@ -36,3 +36,6 @@ This project retrieves real-time weather data, processes it, and provides visual
 
 ### Run celery beat on different terimal
     celery -A core beat -l info
+
+## Setup frontend also:
+[Frontend Repo link](https://github.com/Aman16-ai/realtime-weather-client)
