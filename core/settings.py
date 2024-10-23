@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
-    'weather.apps.WeatherConfig'
+    'weather.apps.WeatherConfig',
+    'alert.apps.AlertConfig'
 ]
 
 MIDDLEWARE = [

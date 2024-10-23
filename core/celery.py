@@ -17,11 +17,15 @@ app.conf.beat_schedule = {
     'fetch-weather-every-5-minute': {
         'task': 'weather.tasks.fetch_weather_data',
         # 'schedule': crontab(minute=0, hour=0, day_of_week='*/2'),
-        'schedule' : crontab(minute='*')
+        'schedule' : crontab(minute='*/2')
     },
     'generate-daily-summary': {
         'task': 'weather.tasks.calculate_daily_summary',
-        'schedule': crontab(minute='*/5'),  # Runs daily at 11:59 PM
+        'schedule': crontab(hour='23', minute='45'),  # Runs daily at 11:59 PM
+    },
+    'send-alert': {
+        'task': 'alert.tasks.send_alert',
+        'schedule': crontab(minute="*/5"),  # Runs daily at 11:59 PM
     },
 }
 # autodiscover tasks in all installed apps
